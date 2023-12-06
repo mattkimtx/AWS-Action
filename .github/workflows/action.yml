@@ -23,7 +23,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      # - uses: actions/checkout@v3
+      - name: checkout repo
+        uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -42,7 +43,11 @@ jobs:
     # needs build in order to run
     # needs: build
     
-    steps:
+    steps:  
+      # checkout repo
+      - name: checkout repo
+        uses: actions/checkout@v3
+
       # Create a new file with text in it
       - name: Create a new file
         run: |
@@ -56,5 +61,6 @@ jobs:
           git config --global user.name "mattkimtx"
           git add success.txt
           git commit -m "edit success.txt"
+          git remote set-url origin https://github.com/mattkimtx/GitHubActionTest.git 
           git push origin main
       
