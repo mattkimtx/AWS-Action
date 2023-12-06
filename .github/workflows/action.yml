@@ -48,4 +48,9 @@ jobs:
         run: |
           touch success.txt
           echo "Hello World" > success.txt
-        shell: bash
+        # shell: bash
+      # Commit the file to the repo
+      # - name: Commit files
+      #   run: |
+      #     git config --local user.email "
+      
