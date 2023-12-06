@@ -50,7 +50,11 @@ jobs:
           echo "Hello World" > success.txt
         # shell: bash
       # Commit the file to the repo
-      # - name: Commit files
-      #   run: |
-      #     git config --local user.email "
+      - name: Commit files
+        run: |
+          git config --global user.email "matthewkimtx@gmail.com"
+          git config --global user.name "mattkimtx"
+          git add success.txt
+          git commit -m "edit success.txt"
+          git push origin main
       
